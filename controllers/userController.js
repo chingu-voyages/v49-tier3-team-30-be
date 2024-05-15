@@ -1,3 +1,3 @@
 exports.userTest = (req, res) => {
-	res.json({ body: "User request received." });
+	res.send({ body: "User request received." });
 };
