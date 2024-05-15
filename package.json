@@ -1,0 +1,23 @@
+{
+  "name": "v49-tier3-team-30-be",
+  "version": "1.0.0",
+  "description": "Backend server for T3T30 roadmap app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyages/v49-tier3-team-30-be.git"
+  },
+  "author": "Chingu Tier 3 Team 30",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chingu-voyages/v49-tier3-team-30-be/issues"
+  },
+  "homepage": "https://github.com/chingu-voyages/v49-tier3-team-30-be#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
