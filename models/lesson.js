@@ -19,10 +19,9 @@ const lessonSchema = new Schema({
 			type: String,
 		},
 	],
-	accountDate: {
-		type: Date,
-		default: Date.now,
-		required: true,
+	isCompleted: {
+		type: Boolean,
+		default: false,
 	},
 });
 
