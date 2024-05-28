@@ -23,6 +23,32 @@ const lessonSchema = new Schema({
 		type: Boolean,
 		default: false,
 	},
+	nodeData: {
+		any: {
+			id: 0,
+			position: { x: 0, y: 0 },
+			label: "CSS",
+			sourcePosition: 0,
+			targetPosition: 0,
+		},
+	},
+	nodeEdges: {
+		any: {
+			id: "e1-2",
+			source: "1",
+			target: "2",
+			markerEnd: {
+				type: MarkerType.ArrowClosed,
+				width: 10,
+				height: 10,
+				color: "black",
+			},
+			style: {
+				strokeWidth: 2,
+				stroke: "black",
+			},
+		},
+	},
 });
 
 const Lesson = mongoose.model("Lesson", lessonSchema);
