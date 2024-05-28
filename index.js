@@ -8,12 +8,17 @@ const mongoose = require("mongoose");
 const MONGO_URI = process.env.MONGO_URI || "";
 
 // connecting to Mongoose server
-try {
-	await mongoose.connect(MONGO_URI);
-	console.log("[SERVER]: Database is connected");
-} catch (err) {
-	console.log("[ERROR]: Database is not connected");
+
+async function main() {
+	try {
+		await mongoose.connect(MONGO_URI);
+		console.log("[SERVER]: Database is connected");
+	} catch (err) {
+		console.log("[ERROR]: Database is not connected");
+	}
 }
+
+main();
 
 // CORS to connect with client side
 const corsOptions = {
