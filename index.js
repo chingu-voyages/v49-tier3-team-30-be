@@ -31,11 +31,13 @@ const corsOptions = {
 
 // loading router modules
 const userRouter = require("./routes/userRouter");
+const lessonRouter = require("./routes/lessonRouter");
 
 // express middleware to parse requests with JSON payloads
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use("/user", userRouter);
+app.use("/lesson", lessonRouter);
 
 app.get("/", (req, res) => {
   res.json({ body: "Hello, world!" });
