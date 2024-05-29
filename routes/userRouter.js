@@ -18,5 +18,6 @@ router.use(logUserParams);
 // reponds with id param if set
 router.get("/", userController.userTest);
 router.get("/:userId", userController.userTest);
+router.post('/signup', userController.signUp)
 
 module.exports = router;
