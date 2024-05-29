@@ -28,14 +28,18 @@ app.get("/", (req, res) => {
 
 
 
-// connecting to Mongoose server
-mongoose
-  .connect(MONGO_URI)
-  .then(() => {
+async function startServer() {
+  try {
+    await mongoose.connect(MONGO_URI);
     console.log("[SERVER]: Database is connected");
-    app.listen(3004, () => {
+
+    app.listen(port, () => {
       console.log(`App listening on port ${port}`);
     });
-  })
-  .catch((err) => console.log("[ERROR]: Database is not connected"));
+  } catch (err) {
+    console.log("[ERROR]: Database is not connected", err);
+  }
+}
+
+startServer();
 
