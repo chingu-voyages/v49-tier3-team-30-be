@@ -13,12 +13,14 @@ async function main() {
 	try {
 		await mongoose.connect(MONGO_URI);
 		console.log("[SERVER]: Database is connected");
+		app.listen(port, () => {
+			console.log(`App listening on port ${port}`);
+		});
 	} catch (err) {
 		console.log("[ERROR]: Database is not connected");
+		console.error(err);
 	}
 }
-
-main();
 
 // CORS to connect with client side
 const corsOptions = {
@@ -38,6 +40,4 @@ app.get("/", (req, res) => {
 	res.json({ body: "Hello, world!" });
 });
 
-app.listen(port, () => {
-	console.log(`App listening on port ${port}`);
-});
+main();
