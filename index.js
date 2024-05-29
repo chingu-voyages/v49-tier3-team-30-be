@@ -32,7 +32,7 @@ const corsOptions = {
 const userRouter = require("./routes/userRouter");
 const lessonRouter = require("./routes/lessonRouter");
 
-// express middleware to parse requests with JSON payloads
+// express middleware to parse requests with JSON and form payloads
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
