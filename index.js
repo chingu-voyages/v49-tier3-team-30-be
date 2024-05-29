@@ -34,6 +34,7 @@ const lessonRouter = require("./routes/lessonRouter");
 
 // express middleware to parse requests with JSON payloads
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
 app.use("/user", userRouter);
 app.use("/lesson", lessonRouter);
