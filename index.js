@@ -8,16 +8,26 @@ const mongoose = require("mongoose");
 const MONGO_URI = process.env.MONGO_URI || "";
 
 // connecting to Mongoose server
-mongoose
-  .connect(MONGO_URI, { dbName: "chingu-db" })
-  .then(() => console.log("[SERVER]: Database is connected"))
-  .catch(err => console.log("[ERROR]: Database is not connected"));
+
+async function main() {
+	try {
+		await mongoose.connect(MONGO_URI);
+		console.log("[SERVER]: Database is connected");
+		app.listen(port, () => {
+			console.log(`App listening on port ${port}`);
+		});
+	} catch (err) {
+		console.log("[ERROR]: Database is not connected");
+		console.error(err);
+	}
+}
 
 // CORS to connect with client side
 const corsOptions = {
-  origin: process.env.CLIENT_SIDE,
-  credentials: true,
-};
+	origin: process.env.CLIENT_SIDE,
+	credentials: true,
+
+
 
 // loading router modules
 const userRouter = require("./routes/userRouter");
@@ -31,6 +41,4 @@ app.get("/", (req, res) => {
   res.json({ body: "Hello, world!" });
 });
 
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
+main();
