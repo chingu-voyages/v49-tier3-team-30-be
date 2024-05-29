@@ -26,7 +26,8 @@ async function main() {
 const corsOptions = {
 	origin: process.env.CLIENT_SIDE,
 	credentials: true,
-};
+
+
 
 // loading router modules
 const userRouter = require("./routes/userRouter");
@@ -37,7 +38,7 @@ app.use(cors(corsOptions));
 app.use("/user", userRouter);
 
 app.get("/", (req, res) => {
-	res.json({ body: "Hello, world!" });
+  res.json({ body: "Hello, world!" });
 });
 
 main();
