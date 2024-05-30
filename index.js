@@ -25,7 +25,7 @@ async function main() {
 // CORS to connect with client side
 const corsOptions = {
 	origin: process.env.CLIENT_SIDE,
-	credentials: true,
+	credentials: true}
 
 
 
