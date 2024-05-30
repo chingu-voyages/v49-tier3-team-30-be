@@ -5,27 +5,34 @@ const app = express();
 const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 
-const MONGO_URI = process.env.MONGO_URI || "";
 
 
 // CORS to connect with client side
 const corsOptions = {
   origin: process.env.CLIENT_SIDE,
-  credentials: true,
+  credentials: true
 };
-
-// loading router modules
-const userRouter = require("./routes/userRouter");
 
 // express middleware to parse requests with JSON payloads
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
+
+
+//Routers
+const userRouter = require("./routes/userRouter");
 app.use("/user", userRouter);
+
+const courseRouter = require("./routes/courseRouter");
+app.use("/course", courseRouter);
+
+
 
 app.get("/", (req, res) => {
   res.json({ body: "Hello, world!" });
 });
 
+
+const MONGO_URI = process.env.MONGO_URI || "";
 
 
 async function startServer() {

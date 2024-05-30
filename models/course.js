@@ -10,6 +10,11 @@ const courseSchema = new Schema({
 		type: String,
 		required: true,
 	},
+
+	structure: {
+		type: Object,
+	}
 });
 
 const Course = mongoose.model("Course", courseSchema);
+module.exports = Course;
