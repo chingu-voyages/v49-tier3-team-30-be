@@ -82,7 +82,20 @@ content-Type: application/json
         "sourcePosition": "Position.Left",
         "targetPosition": "Position.Top"
       }
-    }
+    },
+    {
+        "id": "8",
+        "position": {
+          "x": 200,
+          "y": 190
+        },
+        "type": "customNode",
+        "data": {
+          "label": "HTML",
+          "sourcePosition": "Position.Right",
+          "targetPosition": "Position.Left"
+        }
+      }
 
     ],
         "edges": [
@@ -195,7 +208,7 @@ content-Type: application/json
 
 
 ###
-get http://localhost:3004/course/Back End
+get http://localhost:3004/course/Front End
 content-Type: application/json
 
 
