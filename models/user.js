@@ -19,7 +19,7 @@ const userSchema = new Schema({
 		type: String,
 		required: true,
 		minLength: 6,
-		maxLength: 18,
+		maxLength: 255,
 	},
 	aboutMe: {
 		type: String,
