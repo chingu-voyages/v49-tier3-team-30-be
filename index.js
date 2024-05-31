@@ -32,12 +32,11 @@ const userRouter = require("./routes/userRouter");
 const lessonRouter = require("./routes/lessonRouter");
 const courseRouter = require("./routes/courseRouter");
 
-// express middleware to parse requests with JSON payloads
+// express middleware to parse requests with JSON and form payloads
 app.use(express.json());
-app.use(cors());
 
-
-//Routers
+app.use(express.urlencoded({ extended: true }));
+app.use(cors(corsOptions));
 
 app.use("/user", userRouter);
 app.use("/lesson", lessonRouter);
