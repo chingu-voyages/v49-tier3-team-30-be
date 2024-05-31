@@ -36,7 +36,7 @@ const courseRouter = require("./routes/courseRouter");
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use("/user", userRouter);
 app.use("/lesson", lessonRouter);
