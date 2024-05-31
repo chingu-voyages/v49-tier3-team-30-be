@@ -11,9 +11,10 @@ exports.createLesson = async (req, res) => {
 	const newLesson = new Lesson({ name, desc, urls });
 	try {
 		await newLesson.save();
+		res.status(200).json(newLesson);
 	} catch (err) {
 		console.error(err);
 	}
 
-	res.sendStatus(200);
+	
 };
