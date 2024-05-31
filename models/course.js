@@ -10,7 +10,11 @@ const courseSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	courseLessons: [{ type: Schema.Types.ObjectId, ref: "Lesson" }],
+
+	structure: {
+		type: Object,
+	}
 });
 
 const Course = mongoose.model("Course", courseSchema);
+module.exports = Course;
