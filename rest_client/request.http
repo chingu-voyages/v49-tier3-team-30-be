@@ -1,0 +1,218 @@
+
+
+
+post http://localhost:3004/course
+content-Type: application/json
+
+{
+    "name": "Back End",
+    "structure": {
+        "nodes":[
+            {
+                "id": "1", 
+                "position": { "x": 0, "y": -47 }, 
+                "type": "customNode",
+                "data": {
+                    "label": "JavaScript (Node.js)",
+                    "sourcePosition": "Position.Right",
+                     "targetPosition": "Position.Left"
+                    }
+            }, 
+
+            {
+                "id": "2",
+                "position": { "x": 200, "y": -40 },
+                "type": "customNode",
+                "data": {
+                   "label": "Git & GitHub",
+                  "sourcePosition": "Position.Right",
+                  "targetPosition": "Position.Left"
+                }
+            },
+
+    {
+      "id": "3",
+      "position": { "x": 400, "y": -40 },
+      "type": "customNode",
+      "data": {
+        "label": "Databases",
+        "sourcePosition": "Position.Bottom",
+        "targetPosition": "Position.Left"
+      }
+    },
+    {
+      "id": "4",
+      "position": { "x": 400, "y": 70 },
+      "type": "customNode",
+      "data": {
+        "label": "APIs",
+        "sourcePosition": "Position.Left",
+        "targetPosition": "Position.Top"
+      }
+    },
+
+    {
+      "id": "5",
+      "position": { "x": 200, "y": 70 },
+      "type": "customNode",
+      "data": {
+        "label": "Caching",
+        "sourcePosition": "Position.Left",
+        "targetPosition": "Position.Right"
+      }
+    },
+
+    {
+      "id": "6",
+      "position": { "x": 0, "y": 70 },
+      "type": "customNode",
+      "data": {
+        "label": "Testing",
+        "sourcePosition": "Position.Bottom",
+        "targetPosition": "Position.Right"
+      }
+    },
+
+    {
+      "id": "7",
+      "position": { "x": 0, "y": 190 },
+      "type": "customNode",
+      "data": {
+        "label": "Deployment",
+        "sourcePosition": "Position.Left",
+        "targetPosition": "Position.Top"
+      }
+    },
+    {
+        "id": "8",
+        "position": {
+          "x": 200,
+          "y": 190
+        },
+        "type": "customNode",
+        "data": {
+          "label": "HTML",
+          "sourcePosition": "Position.Right",
+          "targetPosition": "Position.Left"
+        }
+      }
+
+    ],
+        "edges": [
+            {
+      "id": "e1-2",
+      "source": "1",
+      "target": "2",
+      "markerEnd": {
+        "type": "MarkerType.ArrowClosed",
+        "width": 10,
+        "height": 10,
+        "color": "black"
+      },
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "black"
+      }
+    },
+
+            {
+      "id": "e2-3",
+      "source": "2",
+      "target": "3",
+      "markerEnd": {
+        "type": "MarkerType.ArrowClosed",
+        "width": 10,
+        "height": 10,
+        "color": "black"
+      },
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "black"
+      }
+    },
+            {
+      "id": "e3-4",
+      "source": "3",
+      "target": "4",
+      "markerEnd": {
+        "type": "MarkerType.ArrowClosed",
+        "width": 10,
+        "height": 10,
+        "color": "black"
+      },
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "black"
+      }
+    },
+
+    {
+      "id": "e4-5",
+      "source": "4",
+      "target": "5",
+      "markerEnd": {
+        "type": "MarkerType.ArrowClosed",
+        "width": 10,
+        "height": 10,
+        "color": "black"
+      },
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "black"
+      }
+    },
+
+    {
+      "id": "e5-6",
+      "source": "5",
+      "target": "6",
+      // "animated": "true",
+      "markerEnd": {
+        "type": "MarkerType.ArrowClosed",
+        "width": 10,
+        "height": 10,
+        "color": "black"
+      },
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "black"
+      }
+    },
+
+    {
+      "id": "e6-7",
+      "source": "6",
+      "target": "7",
+      // "animated": "true",
+      "markerEnd": {
+        "type": "MarkerType.ArrowClosed",
+        "width": 10,
+        "height": 10,
+        "color": "black"
+      },
+      "style": {
+        "strokeWidth": 2,
+        "stroke": "black"
+      }
+    }
+
+
+      ]
+        }
+}
+
+
+###
+get http://localhost:3004/course
+content-Type: application/json
+
+
+###
+get http://localhost:3004/course/Front End
+content-Type: application/json
+
+
+
+
+
+
