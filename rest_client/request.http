@@ -218,10 +218,10 @@ post http://localhost:3004/user/signup
 content-Type: application/json
 
 {
-  "username": "nadia",
-  "email": "nadia@gmail.com",
-  "password": "password123",
-  "aboutMe": "like to hike"
+  "username": "jim",
+  "email": "jim@gmail.com",
+  "password": "passwordjim",
+  "aboutMe": "like to sleep"
 }
     
 
