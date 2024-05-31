@@ -22,8 +22,10 @@ const lessonSchema = new Schema({
 		type: Boolean,
 		default: false,
 	},
+
 });
 
 const Lesson = mongoose.model("Lesson", lessonSchema);
+
 
 module.exports = Lesson;

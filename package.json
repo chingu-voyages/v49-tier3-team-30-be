@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/chingu-voyages/v49-tier3-team-30-be#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.4.0",
-    "nodemon": "^3.1.2"
+    "nodemon": "^3.1.2",
+    "validator": "^13.12.0"
   }
 }
