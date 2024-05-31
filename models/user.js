@@ -18,16 +18,17 @@ const userSchema = new Schema({
 	password: {
 		type: String,
 		required: true,
+		minLength: 6,
+		maxLength: 18,
 	},
 	aboutMe: {
 		type: String,
 	},
-	accountDate: {
-		type: Date,
-		default: Date.now,
-		required: true,
-	},
+
 	enrolledCourses: [{ type: Schema.Types.ObjectId, ref: "Course" }],
-});
+	
+},{timestamps: true});
 
 const User = mongoose.model("User", userSchema);
+
+module.exports = User
