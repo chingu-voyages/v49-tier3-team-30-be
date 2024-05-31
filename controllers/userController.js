@@ -30,17 +30,37 @@ const signUp = async (req, res) => {
         .json({ message: "This email has already been used." });
     }
     const hashPassword = await bcrypt.hash(password, 10);
-    const userReg = await User.create({
+    await User.create({
       email,
       password: hashPassword,
       username,
       aboutMe,
     });
+    
+    return res.status(201).json({ message: "User created"});
 
-    console.log("userRegggggggggggg", userReg);
+  } catch (error) {
+    console.log("Internal Server Error:", error);
+    res.status(500).json({ message: "Internal Server Error." });
+  }
+};
+
+const login = async(req, res) => {
+  try {
+    const { username, password} = req.body;
+    const user = await User.findOne({username: username});
+    if (!user) {
+      return res.json({message: "User doesn't exist."});
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+
+    if(!isPasswordValid) {
+      return res.json({message: "Username or Password is Incorrect"});
+  }
 
     const accessToken = sign(
-      { username: userReg.username, id: userReg.id },
+      { username: user.username, id: user.id },
       process.env.SECRET_KEY
     );
     //create a cookie in a browser:
@@ -52,12 +72,14 @@ const signUp = async (req, res) => {
       sameSite: "none",
     });
 
-    return res.status(201).json({ message: "User created",  token: accessToken, username: userReg.username, id: userReg.id});
+    console.log("accessToken", accessToken)
+    //token: accessToken,
+    return res.status(201).json({ message: "User loged in",   username: user.username, email: user.email, id: user.id, token: accessToken,});
 
   } catch (error) {
     console.log("Internal Server Error:", error);
     res.status(500).json({ message: "Internal Server Error." });
   }
-};
+}
 
-module.exports = { signUp, userTest };
+module.exports = { signUp, userTest, login };

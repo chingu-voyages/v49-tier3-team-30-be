@@ -223,6 +223,16 @@ content-Type: application/json
   "password": "passwordjim",
   "aboutMe": "like to sleep"
 }
+
+###
+
+post http://localhost:3004/user/login
+content-Type: application/json
+
+{
+  "username": "jim",
+  "password": "passwordjim"
+}
     
 
 
