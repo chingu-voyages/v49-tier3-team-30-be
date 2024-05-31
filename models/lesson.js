@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const lessonSchema = new Schema({
-	parentCourse: { type: Schema.Types.ObjectId, ref: "Course" },
 	name: {
 		type: String,
 		required: true,
@@ -23,9 +22,10 @@ const lessonSchema = new Schema({
 		type: Boolean,
 		default: false,
 	},
-	
-	
+
 });
 
 const Lesson = mongoose.model("Lesson", lessonSchema);
+
+
 module.exports = Lesson;
