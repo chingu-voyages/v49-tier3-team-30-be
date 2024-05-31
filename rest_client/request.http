@@ -212,7 +212,28 @@ get http://localhost:3004/course/Front End
 content-Type: application/json
 
 
+###
 
+post http://localhost:3004/user/signup
+content-Type: application/json
+
+{
+  "username": "jim",
+  "email": "jim@gmail.com",
+  "password": "passwordjim",
+  "aboutMe": "like to sleep"
+}
+
+###
+
+post http://localhost:3004/user/login
+content-Type: application/json
+
+{
+  "username": "jim",
+  "password": "passwordjim"
+}
+    
 
 
 
