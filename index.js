@@ -26,7 +26,7 @@ const corsOptions = {
 	origin: process.env.CLIENT_SIDE,
 	credentials: true}
 
-
+;
 
 // loading router modules
 const userRouter = require("./routes/userRouter");
@@ -48,6 +48,6 @@ app.use("/course", courseRouter);
 
 app.get("/", (req, res) => {
   res.json({ body: "Hello, world!" });
-});
+})
 
 main();
