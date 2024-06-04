@@ -31,6 +31,7 @@ content-Type: application/json
         "type": "customNode",
         "data": {
           "label": "CSS",
+          "_id": "665a6060a44e44e2767889a6",
           "sourcePosition": "Position.Right",
           "targetPosition": "Position.Left"
         }
@@ -174,6 +175,25 @@ content-Type: application/json
   "username": "jim",
   "password": "passwordjim"
 }
+
+
+###
+
+post http://localhost:3004/lesson/create
+content-Type: application/json
+
+{
+  "name": "CSS",
+  "desc": "CSS lorem Ipsum",
+  "urls": ["https://www.w3schools.com/css/", "https://developer.mozilla.org/en-US/docs/Web/CSS"],
+  "isCompleted": false
+}
+
+###
+
+get http://localhost:3004/lesson/665a6060a44e44e2767889a6
+content-Type: application/json
+
     
 
 

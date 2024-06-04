@@ -8,5 +8,7 @@ const lessonController = require("../controllers/lessonController");
 // reponds with id param if set
 
 router.post("/create", lessonController.createLesson);
+router.get("/:id", lessonController.getLessonDetails);
+
 
 module.exports = router;
