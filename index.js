@@ -3,6 +3,8 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
+const cookieParser = require("cookie-parser");
+
 const mongoose = require("mongoose");
 
 
@@ -21,10 +23,16 @@ async function main() {
 	}
 }
 
+app.use(cookieParser());  //every request will have this middleware applying 
+
 // CORS to connect with client side
 const corsOptions = {
 	origin: process.env.CLIENT_SIDE,
-	credentials: true
+	credentials: true,
+	origin: [
+        "http://localhost:5173"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
 };
 
 // loading router modules
@@ -35,8 +43,9 @@ const courseRouter = require("./routes/courseRouter");
 // express middleware to parse requests with JSON and form payloads
 app.use(express.json());
 
+
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use("/user", userRouter);
 app.use("/lesson", lessonRouter);
