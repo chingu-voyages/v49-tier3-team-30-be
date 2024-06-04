@@ -82,7 +82,8 @@ const login = async(req, res) => {
 const userAuthStatus = async(req, res) => {
   if(req.user) {
     res.json(req.user);
-  } res.status(401).json({ message: "Unauthorized" });
+  } else {
+    res.status(401).json({ message: "Unauthorized" });}
 }
 
 const logout = async(req, res) => {
