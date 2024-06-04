@@ -74,7 +74,7 @@ const login = async(req, res) => {
 
     console.log("accessToken", accessToken)
     //token: accessToken,
-    return res.status(201).json({ message: "User loged in",   username: user.username, email: user.email, id: user.id, token: accessToken,});
+    return res.status(201).json({ message: "User loged in",   username: user.username, email: user.email, iserId: user.id, token: accessToken,});
 
   } catch (error) {
     console.log("Internal Server Error:", error);

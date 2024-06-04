@@ -5,7 +5,7 @@ post http://localhost:3004/course
 content-Type: application/json
 
 {
-  "name": "Front Endd",
+  "name": "Front End",
   "structure": {
     "nodes": [
       {
