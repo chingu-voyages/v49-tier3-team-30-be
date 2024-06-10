@@ -7,12 +7,12 @@ const validateToken = (req, res, next) => {
 
   try {
     const validToken = verify(accessToken, process.env.SECRET_KEY);
-    req.user = validToken;
+    req.user = validToken; //{ username: 'peter',  userId: '665e70b437a5e2d550fa7293',  iat: 1717468632 }
     if (validToken) {
       return next();
     }
   } catch (err) {
-    return res.json({ error: err });
+    return res.status(403).json({ error: "Token is not valid!" });
   }
 };
 

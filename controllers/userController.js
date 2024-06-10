@@ -60,21 +60,18 @@ const login = async(req, res) => {
   }
 
     const accessToken = sign(
-      { username: user.username, id: user.id },
+      { username: user.username, userId: user.id },
       process.env.SECRET_KEY
     );
     //create a cookie in a browser:
 
     res.cookie("access-tokenn", accessToken, {
       maxAge: 60 * 60 * 24 * 30 * 1000,
-      httpOnly: true, //will make our cookie not accessable to users: they cannot type in the console.log tab of a browser  somethig like: document.cookies.....
+      httpOnly: true, //will make cookie not accessable to users: they cannot type in the console.log tab of a browser  somethig like: document.cookies.....
       secure: true,
       sameSite: "none",
     });
-
-    console.log("accessToken", accessToken)
-    //token: accessToken,
-    return res.status(201).json({ message: "User loged in",   username: user.username, email: user.email, iserId: user.id, token: accessToken,});
+    return res.status(201).json({ message: "User loged in",  username: user.username, email: user.email, userId: user.id, token: accessToken,});
 
   } catch (error) {
     console.log("Internal Server Error:", error);
@@ -82,4 +79,20 @@ const login = async(req, res) => {
   }
 }
 
-module.exports = { signUp, userTest, login };
+const userAuthStatus = async(req, res) => {
+  if(req.user) {
+    res.json(req.user);
+  } else {
+    res.status(401).json({ message: "Unauthorized" });}
+}
+
+const logout = async(req, res) => {
+  //console.log("req.cookies", req.cookies) //'access-tokenn': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBhdmVsIiwi.....'
+  res.clearCookie("access-tokenn");
+  res.status(200).json({
+      status: 'success',
+      message: 'Logged out...'
+  });
+}
+
+module.exports = { signUp, userTest, login, userAuthStatus, logout };
