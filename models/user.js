@@ -25,10 +25,12 @@ const userSchema = new Schema({
 		type: String,
 	},
 
-	completedLessons: [{ type: Schema.Types.ObjectId, ref: "Lesson" }],
+	completedLessons: [{ type: String, ref: "Lesson" }],
 	
 },{timestamps: true});
 
 const User = mongoose.model("User", userSchema);
 
 module.exports = User
+
+//completedLessons: [{ type: Schema.Types.ObjectId, ref: "Lesson" }],

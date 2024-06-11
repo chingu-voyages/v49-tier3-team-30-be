@@ -166,6 +166,13 @@ content-Type: application/json
   "aboutMe": "like to sleep"
 }
 
+
+###
+
+post http://localhost:3004/user/lessoncompleted/:id
+content-Type: application/json
+
+
 ###
 
 post http://localhost:3004/user/login
