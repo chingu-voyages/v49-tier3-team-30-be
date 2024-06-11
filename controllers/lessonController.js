@@ -30,5 +30,22 @@ const getLessonDetails = async (req, res) => {
 	}
   };
 
+  const handleCheckbox = async (req, res) => {
+	try {
+		
+	  console.log("req.body.isCompleted", req.body.isCompleted);
+	  
+	  const _id = req.params.id;
+	  console.log("lessonId", _id)
+	  const checkboxInfo = await Lesson.findByIdAndUpdate(_id, {isCompleted: req.body.isCompleted})
+	  //console.log("checkboxInfo", checkboxInfo)
+	  const updatedcheckboxInfo = await Lesson.findById(_id);
+  
+	  res.status(200).json(updatedcheckboxInfo);
+	} catch (err) {
+	  res.status(500).json({ message: err.message });
+	}
+  }
 
-  module.exports = { getLessonDetails, createLesson };
+
+  module.exports = { getLessonDetails, createLesson, handleCheckbox };

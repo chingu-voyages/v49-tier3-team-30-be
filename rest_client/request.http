@@ -194,6 +194,20 @@ content-Type: application/json
 get http://localhost:3004/lesson/665a6060a44e44e2767889a6
 content-Type: application/json
 
+
+
+    
+
+###
+
+put http://localhost:3004/lesson/checkbox/665a6060a44e44e2767889a6
+content-Type: application/json
+
+{
+  "isCompleted": "false"
+  
+}
+
     
 
 
