@@ -22,7 +22,23 @@ const getLessonDetails = async (req, res) => {
   try {
     const lessonDetails = await Lesson.find({ _id: req.params.id });
 
-    res.status(200).json(lessonDetails);
+    const lessonId = lessonDetails[0]._id.valueOf() //'665a9e59dc1cb9098f909940'
+
+    //if a user Logged In we need to get lesson details with the appropriate infor of lesson isCompleted.
+
+    let lessonsInfo = [];
+    let updateIsCompleted = false  //by default all lessons are not completed for all not logged in users 
+
+    //for logged in user let's check if the current lesson is completed by user:
+
+    if(req.user) {
+      const userData = await User.find({_id: req.user.userId})
+      lessonsInfo = userData[0].completedLessons //['665a9e59dc1cb9098f909940']   
+      updateIsCompleted = lessonsInfo.includes(lessonId)
+    }
+    const updatedLessonDetails = [{...lessonDetails[0]._doc, isCompleted: updateIsCompleted}] //if I use just ...lessonDetails[0], mongo db send a lot of extra info, but I need staff  only under the key ...lessonDetails[0]._doc 
+    
+    res.status(200).json(updatedLessonDetails);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
