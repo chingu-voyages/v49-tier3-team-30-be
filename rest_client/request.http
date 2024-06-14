@@ -1,11 +1,9 @@
 
-
-
 post http://localhost:3004/course
 content-Type: application/json
 
 {
-  "name": "Front End",
+  "name": "Back End 3",
   "structure": {
     "nodes": [
       {
@@ -16,8 +14,8 @@ content-Type: application/json
         },
         "type": "customNode",
         "data": {
-          "label": "HTML",
-          "_id": "665a44d138f4192b6cb2e5d0",
+          "label": "JavaScript (Node.js)",
+          "_id": "666c81aae8ad2e4e5b001128",
           "sourcePosition": "Position.Right",
           "targetPosition": "Position.Left"
         }
@@ -25,13 +23,13 @@ content-Type: application/json
       {
         "id": "2",
         "position": {
-          "x": 200,
+          "x": 100,
           "y": -40
         },
         "type": "customNode",
         "data": {
-          "label": "CSS",
-          "_id": "665a6060a44e44e2767889a6",
+          "label": "Git & GitHub",
+          "_id": "666c822ae8ad2e4e5b00112a",
           "sourcePosition": "Position.Right",
           "targetPosition": "Position.Left"
         }
@@ -39,12 +37,13 @@ content-Type: application/json
       {
         "id": "3",
         "position": {
-          "x": 400,
+          "x": 200,
           "y": -40
         },
         "type": "customNode",
         "data": {
-          "label": "Java Script",
+          "label": "Databases",
+          "_id": "666c828de8ad2e4e5b00112c",
           "sourcePosition": "Position.Bottom",
           "targetPosition": "Position.Left"
         }
@@ -52,12 +51,13 @@ content-Type: application/json
       {
         "id": "4",
         "position": {
-          "x": 400,
-          "y": 60
+          "x": 200,
+          "y": 30
         },
         "type": "customNode",
         "data": {
-          "label": "React JS",
+          "label": "APIs",
+          "_id": "666c82eee8ad2e4e5b00112e",
           "sourcePosition": "Position.Left",
           "targetPosition": "Position.Top"
         }
@@ -67,16 +67,46 @@ content-Type: application/json
         "sourcePosition": "left",
         "targetPosition": "right",
         "position": {
-          "x": 200,
-          "y": 60
+          "x": 100,
+          "y": 30
         },
         "type": "customNode",
         "data": {
-          "label": "Git",
+          "label": "Caching",
+          "_id": "666c8333e8ad2e4e5b0011300",
           "sourcePosition": "Position.Left",
           "targetPosition": "Position.Right"
         }
+      }, 
+      {
+        "id": "6",        
+        "position": {
+          "x": 0,
+          "y": 30
+        },
+        "type": "customNode",
+        "data": {
+          "label": "Testing",
+          "_id": "666c8381e8ad2e4e5b001132",
+          "sourcePosition": "Position.Bottom",
+          "targetPosition": "Position.Right"
+        }
+      },
+      {
+        "id": "7",        
+        "position": {
+          "x": 0,
+          "y": 100
+        },
+        "type": "customNode",
+        "data": {
+          "label": "Deployment",
+          "_id": "666c853ee8ad2e4e5b001134",
+          "sourcePosition": "Position.Right",
+          "targetPosition": "Position.Top"
+        }
       }
+      
     ],
     "edges": [
       {
@@ -85,12 +115,12 @@ content-Type: application/json
         "target": "2",
         "markerEnd": {
           "type": "MarkerType.ArrowClosed",
-          "width": 10,
-          "height": 10,
+          "width": 7,
+          "height": 7,
           "color": "black"
         },
         "style": {
-          "strokeWidth": 2,
+          "strokeWidth": 1,
           "stroke": "black"
         }
       },
@@ -100,12 +130,12 @@ content-Type: application/json
         "target": "3",
         "markerEnd": {
           "type": "MarkerType.ArrowClosed",
-          "width": 10,
-          "height": 10,
+          "width": 7,
+          "height": 7,
           "color": "black"
         },
         "style": {
-          "strokeWidth": 2,
+          "strokeWidth": 1,
           "stroke": "black"
         }
       },
@@ -115,12 +145,12 @@ content-Type: application/json
         "target": "4",
         "markerEnd": {
           "type": "MarkerType.ArrowClosed",
-          "width": 10,
-          "height": 10,
+          "width": 7,
+          "height": 7,
           "color": "black"
         },
         "style": {
-          "strokeWidth": 2,
+          "strokeWidth": 1,
           "stroke": "black"
         }
       },
@@ -130,12 +160,42 @@ content-Type: application/json
         "target": "5",
         "markerEnd": {
           "type": "MarkerType.ArrowClosed",
-          "width": 10,
-          "height": 10,
+          "width": 7,
+          "height": 7,
           "color": "black"
         },
         "style": {
-          "strokeWidth": 2,
+          "strokeWidth": 1,
+          "stroke": "black"
+        }
+      },
+      {
+        "id": "e5-6",
+        "source": "5",
+        "target": "6",
+        "markerEnd": {
+          "type": "MarkerType.ArrowClosed",
+          "width": 7,
+          "height": 7,
+          "color": "black"
+        },
+        "style": {
+          "strokeWidth": 1,
+          "stroke": "black"
+        }
+      },
+      {
+        "id": "e6-7",
+        "source": "6",
+        "target": "7",
+        "markerEnd": {
+          "type": "MarkerType.ArrowClosed",
+          "width": 7,
+          "height": 7,
+          "color": "black"
+        },
+        "style": {
+          "strokeWidth": 1,
           "stroke": "black"
         }
       }
@@ -190,9 +250,9 @@ post http://localhost:3004/lesson/create
 content-Type: application/json
 
 {
-  "name": "CSS",
-  "desc": "CSS lorem Ipsum",
-  "urls": ["https://www.w3schools.com/css/", "https://developer.mozilla.org/en-US/docs/Web/CSS"],
+  "name": "Deployment",
+  "desc": "When the testing passes, developers move to the deployment where they can see the working of their application. It can also be referred to as a live environment. This process includes 5 steps: Planning, development, testing, deploying, and monitoring. ",
+  "urls": [],
   "isCompleted": false
 }
 
