@@ -3,7 +3,7 @@ post http://localhost:3004/course
 content-Type: application/json
 
 {
-  "name": "Back End 3",
+  "name": "Full Stack Developer",
   "structure": {
     "nodes": [
       {
@@ -14,8 +14,8 @@ content-Type: application/json
         },
         "type": "customNode",
         "data": {
-          "label": "JavaScript (Node.js)",
-          "_id": "666c81aae8ad2e4e5b001128",
+          "label": "HTML",
+          "_id": "665a9d95dc1cb9098f90993c",
           "sourcePosition": "Position.Right",
           "targetPosition": "Position.Left"
         }
@@ -28,8 +28,8 @@ content-Type: application/json
         },
         "type": "customNode",
         "data": {
-          "label": "Git & GitHub",
-          "_id": "666c822ae8ad2e4e5b00112a",
+          "label": "CSS",
+          "_id": "665a6060a44e44e2767889a6",
           "sourcePosition": "Position.Right",
           "targetPosition": "Position.Left"
         }
@@ -42,8 +42,8 @@ content-Type: application/json
         },
         "type": "customNode",
         "data": {
-          "label": "Databases",
-          "_id": "666c828de8ad2e4e5b00112c",
+          "label": "Java Script",
+          "_id": "665a9d51dc1cb9098f90993a",
           "sourcePosition": "Position.Bottom",
           "targetPosition": "Position.Left"
         }
@@ -56,8 +56,8 @@ content-Type: application/json
         },
         "type": "customNode",
         "data": {
-          "label": "APIs",
-          "_id": "666c82eee8ad2e4e5b00112e",
+          "label": "nmp",
+          "_id": "666df33cfbf21f5b7328b06f",
           "sourcePosition": "Position.Left",
           "targetPosition": "Position.Top"
         }
@@ -72,8 +72,8 @@ content-Type: application/json
         },
         "type": "customNode",
         "data": {
-          "label": "Caching",
-          "_id": "666c8333e8ad2e4e5b0011300",
+          "label": "Git & GitHub",
+          "_id": "666c822ae8ad2e4e5b00112a",
           "sourcePosition": "Position.Left",
           "targetPosition": "Position.Right"
         }
@@ -86,8 +86,8 @@ content-Type: application/json
         },
         "type": "customNode",
         "data": {
-          "label": "Testing",
-          "_id": "666c8381e8ad2e4e5b001132",
+          "label": "React.js",
+          "_id": "665a9de8dc1cb9098f90993e",
           "sourcePosition": "Position.Bottom",
           "targetPosition": "Position.Right"
         }
@@ -100,8 +100,50 @@ content-Type: application/json
         },
         "type": "customNode",
         "data": {
-          "label": "Deployment",
-          "_id": "666c853ee8ad2e4e5b001134",
+          "label": "Node.js",
+          "_id": "666df3c5fbf21f5b7328b07c",
+          "sourcePosition": "Position.Right",
+          "targetPosition": "Position.Top"
+        }
+      },
+      {
+        "id": "8",        
+        "position": {
+          "x": 100,
+          "y": 100
+        },
+        "type": "customNode",
+        "data": {
+          "label": "PostgreSQL",
+          "_id": "666df3fcfbf21f5b7328b07e",
+          "sourcePosition": "Position.Right",
+          "targetPosition": "Position.Top"
+        }
+      },
+      {
+        "id": "9",        
+        "position": {
+          "x": 200,
+          "y": 100
+        },
+        "type": "customNode",
+        "data": {
+          "label": "RESTful API",
+          "_id": "666df437fbf21f5b7328b080",
+          "sourcePosition": "Position.Right",
+          "targetPosition": "Position.Top"
+        }
+      },
+      {
+        "id": "10",        
+        "position": {
+          "x": 300,
+          "y": 100
+        },
+        "type": "customNode",
+        "data": {
+          "label": "JWT Auth",
+          "_id": "666df473fbf21f5b7328b082",
           "sourcePosition": "Position.Right",
           "targetPosition": "Position.Top"
         }
@@ -198,6 +240,51 @@ content-Type: application/json
           "strokeWidth": 1,
           "stroke": "black"
         }
+      },
+      {
+        "id": "e7-8",
+        "source": "7",
+        "target": "8",
+        "markerEnd": {
+          "type": "MarkerType.ArrowClosed",
+          "width": 7,
+          "height": 7,
+          "color": "black"
+        },
+        "style": {
+          "strokeWidth": 1,
+          "stroke": "black"
+        }
+      },
+      {
+        "id": "e8-9",
+        "source": "8",
+        "target": "9",
+        "markerEnd": {
+          "type": "MarkerType.ArrowClosed",
+          "width": 7,
+          "height": 7,
+          "color": "black"
+        },
+        "style": {
+          "strokeWidth": 1,
+          "stroke": "black"
+        }
+      },
+      {
+        "id": "e9-10",
+        "source": "9",
+        "target": "10",
+        "markerEnd": {
+          "type": "MarkerType.ArrowClosed",
+          "width": 7,
+          "height": 7,
+          "color": "black"
+        },
+        "style": {
+          "strokeWidth": 1,
+          "stroke": "black"
+        }
       }
     ]
   }
@@ -250,9 +337,9 @@ post http://localhost:3004/lesson/create
 content-Type: application/json
 
 {
-  "name": "Deployment",
-  "desc": "When the testing passes, developers move to the deployment where they can see the working of their application. It can also be referred to as a live environment. This process includes 5 steps: Planning, development, testing, deploying, and monitoring. ",
-  "urls": [],
+  "name": "JWT Auth",
+  "desc": "JWT stands for JSON Web Token is a token-based encryption open standard/methodology that is used to transfer information securely as a JSON object. Clients and Servers use JWT to securely share information, with the JWT containing encoded JSON objects and claims. JWT tokens are designed to be compact, safe to use within URLs, and ideal for SSO contexts.",
+  "urls": ["https://jwt.io/", "https://www.akana.com/blog/what-is-jwt"],
   "isCompleted": false
 }
 

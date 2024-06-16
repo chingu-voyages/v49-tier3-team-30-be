@@ -4,7 +4,6 @@ const Lesson = require("../models/lesson");
 const User = require("../models/user");
 
 const createLesson = async (req, res) => {
-  console.log(req.body);
   const { name, desc, urls } = req.body;
   if (!name) {
     return res.status(400).json({ message: "Course name required" });
@@ -45,7 +44,6 @@ const getLessonDetails = async (req, res) => {
 };
 
 const handleCheckbox = async (req, res) => {
-  console.log("req.userrr", req.user);
   try {
     const _id = req.params.id;
     const checkboxInfo = await Lesson.findByIdAndUpdate(_id, {

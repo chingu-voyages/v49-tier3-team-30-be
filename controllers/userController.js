@@ -71,7 +71,7 @@ const login = async(req, res) => {
       secure: true,
       sameSite: "none",
     });
-    return res.status(201).json({ message: "User loged in",  username: user.username, email: user.email, userId: user.id, token: accessToken,});
+    return res.status(201).json({ message: "User loged in",  username: user.username, email: user.email, userId: user.id, completedLessons: user.completedLessons, token: accessToken,});
 
   } catch (error) {
     console.log("Internal Server Error:", error);
@@ -80,8 +80,10 @@ const login = async(req, res) => {
 }
 
 const userAuthStatus = async(req, res) => {
-  if(req.user) {
-    res.json(req.user);
+  const {user} = req;
+  const userData = await User.findOne({username: user.username});
+  if(user) {
+    res.status(200).json({ message: "User loged in",  username: userData.username, email: userData.email, userId: userData.id, completedLessons: userData.completedLessons});
   } else {
     res.status(401).json({ message: "Unauthorized" });}
 }
@@ -94,5 +96,7 @@ const logout = async(req, res) => {
       message: 'Logged out...'
   });
 }
+
+
 
 module.exports = { signUp, userTest, login, userAuthStatus, logout };
